@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\StudentController;
+use App\Http\Controllers\ClientController;
 use App\Http\Controllers\BorrowController;
 use App\Http\Controllers\AuthController;
 use Illuminate\Http\Request;
@@ -24,11 +24,11 @@ Route::group(['middleware'=>'auth:api'], function(){
     Route::get('/user', [AuthController::class, 'me']);
     Route::post('/logout',[AuthController::class, 'logout']);
 
-    Route::post('/students/search', [StudentController::class, 'search']);
-    Route::post('/students', [StudentController::class, 'store']);
-    Route::get('/students', [StudentController::class, 'index']);
-    Route::get('/students/{student}', [StudentController::class, 'show']);
-    Route::put('/students/{student}', [StudentController::class, 'update']);
-    Route::delete('/students/{student}', [StudentController::class, 'destroy']);
+    Route::post('/clients/search', [ClientController::class, 'search']);
+    Route::post('/clients', [ClientController::class, 'store']);
+    Route::get('/clients', [ClientController::class, 'index']);
+    Route::get('/clients/{client}', [ClientController::class, 'show']);
+    Route::put('/clients/{client}', [ClientController::class, 'update']);
+    Route::delete('/clients/{client}', [ClientController::class, 'destroy']);
 
 });

@@ -5,13 +5,13 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Student extends Model
+class Client extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['name', 'email', 'address', 'contact', 'birthdate', 'course'];
+    protected $fillable = ['name', 'address', 'phone', 'capitalization', 'loan_balance'];
 
     public function container() {
-        return $this->belongsTo('App\Models\Student', 'name', 'id');
+        return $this->belongsTo('App\Models\Client', 'name', 'id');
     }
 }
